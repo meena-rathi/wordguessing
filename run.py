@@ -5,7 +5,17 @@ def random_word():
     return random.choice(list_words)
     # word = " ".join(list_words)
     # print(word)
+def validation(word, word_length):
+    try:
+        if len(word) != word_length:
+             raise ValueError(
+                f"Exactly {word_length } values required, you provided {len(word)}"
+            )
 
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+    return true
 def guessing_words(word):
     guessed_word = ["-"] * len(word)
     print("Select the guessed word") 
@@ -14,12 +24,15 @@ def guessing_words(word):
 
 def secret_words(word):
     guessed_word = guessing_words(word)
+    correct_length = len(word)
     #word = ''.join(guessed_word)
     attempt = 5
     hint_word = 2
 
     while(attempt > 0):
         user_input = input("Enter the guessed word: ")
+        if not validation(user_input, correct_length):
+            break
   
         if user_input == word:
             print("correct")
