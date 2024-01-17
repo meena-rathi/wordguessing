@@ -3,19 +3,25 @@ import random
 def random_word():
     list_words = ['programming', 'teacher', 'happy', 'world']
     return random.choice(list_words)
-    # word = " ".join(list_words)
-    # print(word)
+
 def validation(word, word_length):
     try:
-        if len(word) != word_length:
-             raise ValueError(
-                f"Exactly {word_length } values required, you provided {len(word)}"
+        if not isinstance(word, str):
+            raise ValueError("Input must be a string.")
+        elif " " in word:
+            raise ValueError("Spaces are not allowed in the input.")
+        elif len(word) != word_length:
+            raise ValueError(
+                f"Exactly {word_length} characters required, you provided {len(word)}"
             )
-
+        elif not word.isalpha():
+            raise ValueError("Only alphabetic characters are allowed in the input.")
+        
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+        print(f"Invalid input: {e}, please try again.\n")
         return False
-    return true
+    return True
+
 def guessing_words(word):
     guessed_word = ["-"] * len(word)
     print("Select the guessed word") 
@@ -25,26 +31,31 @@ def guessing_words(word):
 def secret_words(word):
     guessed_word = guessing_words(word)
     correct_length = len(word)
-    #word = ''.join(guessed_word)
-    attempt = 5
-    hint_word = 2
+    attempt = 5 
+    hint_counter = 0 
+    hint_word = 3
 
-    while(attempt > 0):
+    while attempt > 0:
         user_input = input("Enter the guessed word: ")
-        if not validation(user_input, correct_length):
-            break
-  
+      
         if user_input == word:
-            print("correct")
+            print("Correct!")
             break
         else:
             print("Try again")
             attempt -= 1
-        
+        hint_counter += 1
+        print(attempt)
+        print(hint_word)
         if attempt == hint_word:
             provide_hint(word, guessed_word)
+            hint_counter = 0 
+        if not validation(user_input, correct_length):
+            continue  
+      
     if attempt == 0:
         print("Sorry, you're out of attempts. The correct word was:", word)
+
     return guessed_word
 
 def provide_hint(word, word_guessed):
@@ -53,9 +64,8 @@ def provide_hint(word, word_guessed):
         if word[i] == hint_word:
             word_guessed[i] = word[i]
 
-    print(f"hint{hint_word}")
-    print(''.join(word_guessed))
+    print(f"Hint: {hint_word}")
+    print(' '.join(word_guessed))
 
 word_to_guess = random_word()
-#guessed_word = guessing_words(word_to_guess)
 guessed_word = secret_words(word_to_guess)
