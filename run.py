@@ -1,7 +1,7 @@
 import random
 
 def random_word():
-    list_words = ['programming', 'teacher', 'happy', 'world']
+    list_words = ['programming', 'teacher', 'happy', 'world', 'hi']
     return random.choice(list_words)
 
 def validation(word, word_length):
@@ -34,6 +34,11 @@ def secret_words(word):
     attempt = 5 
     hint_counter = 0 
     hint_word = 3
+    list_word = 4
+
+
+    # word_to_guess = word
+    # guessed_word = secret_words(word_to_guess)
 
     while attempt > 0:
         user_input = input("Enter the guessed word: ")
@@ -45,8 +50,7 @@ def secret_words(word):
             print("Try again")
             attempt -= 1
         hint_counter += 1
-        print(attempt)
-        print(hint_word)
+   
         if attempt == hint_word:
             provide_hint(word, guessed_word)
             hint_counter = 0 
@@ -66,6 +70,12 @@ def provide_hint(word, word_guessed):
 
     print(f"Hint: {hint_word}")
     print(' '.join(word_guessed))
+for iteration in range(1, 5):
+    finish_iteration = 4
 
-word_to_guess = random_word()
-guessed_word = secret_words(word_to_guess)
+    if iteration < finish_iteration:
+        word_to_guess = random_word()
+        guessed_word = secret_words(word_to_guess)
+        print("Next string\n")
+
+print("Finish")
