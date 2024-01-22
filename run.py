@@ -1,10 +1,21 @@
 import random
 
+
 def random_word():
     list_words = ['programming', 'teacher', 'happy', 'world', 'hi']
     return random.choice(list_words)
 
 def validation(word, word_length):
+    """
+    The input must be a string.
+    Spaces are not allowed in the input.
+    The length of the input must match the specified word_length.
+    Only alphabetic characters are allowed in the input.
+
+    If any of these conditions are not met, a ValueError is raised with an appropriate
+    error message. If the input passes all checks, the function returns True; otherwise,
+    it returns False after printing an error message
+    """
     try:
         if not isinstance(word, str):
             raise ValueError("Input must be a string.")
@@ -29,6 +40,7 @@ def guessing_words(word):
     return guessed_word
 
 def secret_words(word):
+    print("This contains a string words, these are realted to programming \n")
     guessed_word = guessing_words(word)
     correct_length = len(word)
     attempt = 5 
@@ -39,8 +51,9 @@ def secret_words(word):
 
     # word_to_guess = word
     # guessed_word = secret_words(word_to_guess)
-
+  
     while attempt > 0:
+        print(f"{attempt} attempts are remaing \n")
         user_input = input("Enter the guessed word: ")
       
         if user_input == word:
@@ -56,13 +69,14 @@ def secret_words(word):
             hint_counter = 0 
         if not validation(user_input, correct_length):
             continue  
-      
+ 
     if attempt == 0:
         print("Sorry, you're out of attempts. The correct word was:", word)
 
     return guessed_word
 
 def provide_hint(word, word_guessed):
+
     hint_word = random.choice(word)
     for i in range(len(word)):
         if word[i] == hint_word:
