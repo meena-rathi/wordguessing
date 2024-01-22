@@ -77,3 +77,26 @@ I as a user,
     Actual result : A random hint appear in a word.
     Excepted result :there should be a random hint appear in a word..
     Status : Pass
+
+## Fixed Bugs ##
+1. Fixed the validation.
+2. Fixed the provide_hint function.
+3. Fixed the main function.
+4. Fixed the loop to display all list item one by one.
+
+## Supported Screen and browser ##
+
+1. The website is compatible with all devices.
+
+## Deployment ##
+
+**Github**
+1. Locate the GitHub repository you need.
+2. Click the down arrow on the "Code" button.
+3. Copy the link provided in the dropdown.
+4. Open your preferred code editor (like Codeanywhere) and select the directory for the clone.
+5. In the terminal, use the command 'git clone' and paste the copied GitHub link.
+6. Press 'Enter' to create a local clone of the repository in your chosen directory.
+
+## Credits ##
+1. Love sandwitches
