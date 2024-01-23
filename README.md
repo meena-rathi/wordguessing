@@ -1,23 +1,42 @@
 
 ## Purpose of the project ##
 
-The purpose of this project is design a Word guessing game. The list contains a 5 words, it will be iterate randomly one by one. one word and limit to guess 5 time after the new new word will be appear. after 2 guess a hint will be appear on random position.
+This project aims to create a word guessing game with 5 random words, offering players 5 attempts to guess each word. After 2 incorrect guesses, a hint will be revealed at a random point. The correct word and the last guessed word will be saved in a Google Sheet for tracking.
 
+## User Story ##
 
 I as a user, 
+
 ## Features ##
 
 **Home**
-1. A list contains a words.
-2. Each a word a 5 attempts.
-3. After 2 attemps hint will be appear.
-4. Validation handle in all cases.
+1. Sheet will be created with the name of Player name.
+2. A list contains of words.
+3. Each a word has a 5 attempts.
+4. After 2 attemps hint will be reveal.
+5. Validation handle in all cases.
+6. Acutual word and player last guessed word for all words will be saved in google sheet.
+7. For every player new sheet will be created.
 
 ## Technologies ##
+
 1. I have used python language.
+2. Google Sheet API.
+
+**Github**
+I used to store the code.
+
+**CodeAnyWhere**
+I used codeanywhere to develop the website.
+
+**Heroku**
 
 ## Testing ##
-1. 
+
+1. Code Validation
+
+1. No errors in py file.
+
 **Test cases**
 
 1. Test Case:

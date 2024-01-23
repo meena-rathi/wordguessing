@@ -27,10 +27,9 @@ def get_user_worksheet(username):
 
 def save_data(worksheet, correct_answer, last_answer):
     """
-     Save data to the worksheet
-     """
+    Save data to the worksheet
+    """
     worksheet.append_row([correct_answer, last_answer])
-
 
 
 def random_word():
@@ -45,9 +44,10 @@ def validation(word, word_length):
     The length of the input must match the specified word_length.
     Only alphabetic characters are allowed in the input.
 
-    If any of these conditions are not met, a ValueError is raised with an appropriate
-    error message. If the input passes all checks, the function returns True; otherwise,
-    it returns False after printing all error messages.
+    If any of these conditions are not met, a ValueError is raised with an
+    appropriate error message. If the input passes all checks,
+    the function returns True;
+    otherwise, it returns False after printing all error messages.
     """
     error_messages = []
 
@@ -59,12 +59,10 @@ def validation(word, word_length):
 
     if len(word) != word_length:
         error_messages.append(
-            f"Exactly {word_length} characters required, you provided {len(word)}"
+            f"Exactly {word_length}characters required,you provided{len(word)}"
         )
-
     if not word.isalpha():
-        error_messages.append("Only alphabetic characters are allowed in the input.")
-
+        error_messages.append("Only alphabetic characters are allowed")
     if error_messages:
         print("Invalid input:")
         for error in error_messages:
@@ -76,9 +74,9 @@ def validation(word, word_length):
 
 
 def guessing_words(word):
-     """
-     Starts a word guessing game with the provided word.
-     """
+    """
+    Starts a word guessing game with the provided word.
+    """
     guessed_word = ["-"] * len(word)
     print("Select the guessed word")
     print(" ".join(guessed_word))
@@ -100,7 +98,8 @@ def provide_hint(word, word_guessed):
 def secret_words(word):
     """
     Initializes a programming-related word guessing game.
-    Player has 5 attempts to guess the word, with hints after 3 incorrect attempts.
+    Player has 5 attempts to guess the word,
+    and with hints after 3 incorrect attempts.
     Prompts user for input and provides feedback.
     Returns the state of guessed letters during the game.
     """
@@ -110,12 +109,12 @@ def secret_words(word):
     attempt = 5
     hint_counter = 0
     hint_word = 3
-    last_guess = ''  
+    last_guess = ''
 
     while attempt > 0:
         print(f"{attempt} attempts remaining\n")
         user_input = input("Enter the guessed word: ")
-        last_guess = user_input 
+        last_guess = user_input
 
         if user_input == word:
             print("Correct!")
@@ -137,13 +136,14 @@ def secret_words(word):
 
 def main():
     username = input("Enter your username: ")
-    for iteration in range(1, 5):
+    for iteration in range(1, 6):
         word_to_guess = random_word()
         last_guess, guessed_word = secret_words(word_to_guess)
         worksheet = get_user_worksheet(username)
         save_data(worksheet, word_to_guess, last_guess)
         print("Next string\n")
     print("Finish")
+
 
 if __name__ == "__main__":
     main()
