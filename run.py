@@ -135,7 +135,7 @@ def secret_words(word):
 
 
 def main():
-    username = input("Enter your username: ")
+    username = input("Enter your username: \n")
     for iteration in range(1, 6):
         word_to_guess = random_word()
         last_guess, guessed_word = secret_words(word_to_guess)
