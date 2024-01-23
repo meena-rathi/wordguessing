@@ -1,7 +1,7 @@
 import random
 
 def random_word():
-    list_words = ['programming', 'teacher', 'happy', 'world', 'hi']
+    list_words = ['java', 'html', 'c', 'python', 'css']
     return random.choice(list_words)
 def validation(word, word_length):
     """
@@ -74,7 +74,10 @@ def guessing_words(word):
     return guessed_word
 
 def provide_hint(word, word_guessed):
-    """Provides a hint for the word by revealing one randomly chosen letter."""
+    """
+    Provides a hint for the word by revealing one randomly chosen letter.
+    
+    """
     hint_word = random.choice(word)
     for i in range(len(word)):
         if word[i] == hint_word:
@@ -89,7 +92,7 @@ def secret_words(word):
     Prompts user for input and provides feedback.
     Returns the state of guessed letters during the game.
     """
-    print("This contains string words related to programming\n")
+    print("Words are belong form programming languages\n")
     guessed_word = guessing_words(word)
     correct_length = len(word)
     attempt = 5 
@@ -102,7 +105,7 @@ def secret_words(word):
             print("Correct!")
             break
         else:
-            print("Try again")
+            print("Try again, this is not a correct word")
             attempt -= 1
         hint_counter += 1
        
