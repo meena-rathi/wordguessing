@@ -24,16 +24,18 @@ I as a user,
 2. Google Sheet API.
 
 **Github**
+
 I used to store the code.
 
 **CodeAnyWhere**
+
 I used codeanywhere to develop the website.
 
 **Heroku**
 
 ## Testing ##
 
-1. Code Validation
+**Code Validation**
 
 1. No errors in py file.
 
