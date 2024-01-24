@@ -103,7 +103,7 @@ def secret_words(word):
     Prompts user for input and provides feedback.
     Returns the state of guessed letters during the game.
     """
-    print("Words belong to programming languages\n")
+    # print("Words belong to programming languages\n")
     guessed_word = guessing_words(word)
     correct_length = len(word)
     attempt = 5
@@ -135,6 +135,8 @@ def secret_words(word):
 
 
 def main():
+    print("This is the simple word guessing game.\n")
+    print("All words are belong from Programming words.")
     username = input("Enter your username: \n")
     for iteration in range(1, 6):
         word_to_guess = random_word()
