@@ -133,16 +133,22 @@ def secret_words(word):
     return last_guess, guessed_word
 
 def main():
+    """
+    Saves the player's data, including the word to guess, the last guess, 
+    and the guessed word,
+    in a worksheet associated with the player's username.
+    After five rounds, prints "Finish" to signify the end of the game.
+    """
     print("Welcome to the Word Guess game! \n")
     print("This is the simple word guessing game.")
     print("All words are belong from Programming words. \n")
-    username = input("Enter your username: \n")
+    username = input("Enter your Player Name: \n")
     for iteration in range(1, 6):
         word_to_guess = random_word()
         last_guess, guessed_word = secret_words(word_to_guess)
         worksheet = get_user_worksheet(username)
         save_data(worksheet, word_to_guess, last_guess)
-        print("Next string\n")
+        print("Next Word\n")
     print("Finish")
 
 
