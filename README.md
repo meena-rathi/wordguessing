@@ -42,62 +42,62 @@ I used codeanywhere to develop the website.
 **Test cases**
 
 1. Test Case:
-    Click on the https://8000-meena-rathi-shopping-t5i0p7g8wj.us2.codeanyapp.com/index.html.
-    Click on the run  button"
-    Random word will appear on the screen.
-    And then user has to guess the word.
-    if the useer guess correct word
-    Browser : chrome
-    Actual result : your guess correct.
-    Excepted result : your should should be correct.
-    Status : Pass
+    1. Click on the https://guess-word-922a70a849de.herokuapp.com/.
+    2. Enter the Player name:
+    3. Random word will appear on the screen.
+    4. And then user has to guess the word.
+    5. if the useer guess correct word
+    6. Browser : chrome
+    7. Actual result : your guess correct.
+    8. Excepted result : your should should be correct.
+    9. Status : Pass
 
 2. Test Case:
-    Click on the https://8000-meena-rathi-shopping-t5i0p7g8wj.us2.codeanyapp.com/index.html.
-    Click on the run  button"
-    Random word will appear on the screen.
-    And then user has to guess the word.
-    if the enter any numeric input.
-    Browser : chrome
-    Actual result : Numeric values are not allowed.
-    Excepted result :Numeric values are not allowed .
-    Status : Pass
+    1. Click on the https://guess-word-922a70a849de.herokuapp.com/.
+    2. Enter the Player name.
+    3. Random word will appear on the screen.
+    4. And then user has to guess the word.
+    5. If the enter any numeric input.
+    6. Browser : chrome
+    7. Actual result : Numeric values are not allowed.
+    8. Excepted result :Numeric values are not allowed .
+    9. Status : Pass
 
 3. Test Case:
-    Click on the https://8000-meena-rathi-shopping-t5i0p7g8wj.us2.codeanyapp.com/index.html.
-    Click on the run  button"
-    Random word will appear on the screen.
-    And then user has to guess the word.
-    if the enter any input if the input is greater or smaller than the word length .
-    Browser : chrome
-    Actual result : Word length is not to equal to word.
-    Excepted result :there should be show the message word lenth is no match to word.
-    Status : Pass
+    1. Click on the https://guess-word-922a70a849de.herokuapp.com/.
+    2. Enter the Player name.
+    3. Random word will appear on the screen.
+    4. And then user has to guess the word.
+    5. If the enter any input if the input is greater or smaller than the word length.
+    6. Browser : chrome
+    7. Actual result : Word length is not to equal to word.
+    8. Excepted result :there should be show the message word lenth is no match to word.
+    9. Status : Pass
 
 4. Test Case:
-    Click on the https://8000-meena-rathi-shopping-t5i0p7g8wj.us2.codeanyapp.com/index.html.
-    Click on the run  button"
-    Random word will appear on the screen.
-    And then user has to guess the word.
-    Enter string input.
-    If the sring is not match to actual word.
-    Browser : chrome
-    Actual result : Word is not matches show message "try again" .
-    Excepted result :there should be Word is not matches show message "try again" .
-    Status : Pass
+    1. Click on the https://guess-word-922a70a849de.herokuapp.com/.
+    2. Enter the Player name.
+    3. Random word will appear on the screen.
+    4. And then user has to guess the word.
+    5. Enter string input.
+    6. If the sring is not match to actual word.
+    7. Browser : chrome
+    8. Actual result : Word is not matches show message "try again" .
+    9. Excepted result :there should be Word is not matches show message "try again" .
+    10. Status : Pass
 
 
-4. Test Case:
-    Click on the https://8000-meena-rathi-shopping-t5i0p7g8wj.us2.codeanyapp.com/index.html.
-    Click on the run  button"
-    Random word will appear on the screen.
-    And then user has to guess the word.
-    Enter any input.
-    after 2 apptempts of hint will be appear any random position.
-    Browser : chrome
-    Actual result : A random hint appear in a word.
-    Excepted result :there should be a random hint appear in a word..
-    Status : Pass
+5. Test Case:
+    1. Click on the https://guess-word-922a70a849de.herokuapp.com/.
+    2. Enter the Player name.
+    3. Random word will appear on the screen.
+    4. And then user has to guess the word.
+    5. Enter any input.
+    6. After 2 apptempts of hint will be appear any random position.
+    7. Browser : chrome
+    8. Actual result : A random hint appear in a word.
+    9. Excepted result :there should be a random hint appear in a word..
+    10. Status : Pass
 
 ## Fixed Bugs ##
 1. Fixed the validation.
