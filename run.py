@@ -15,21 +15,23 @@ SHEET = GSPREAD_CLIENT.open('wordguess')
 
 
 def get_user_worksheet(username):
+    """
+    Create sheet with the player name.
+    add the row correct word and Last guess word
+    """
     try:
         worksheet = SHEET.worksheet(username)
     except gspread.exceptions.WorksheetNotFound:
-        # If the worksheet doesn't exist, create a new one
         worksheet = SHEET.add_worksheet(title=username, rows="100", cols="20")
-        # Add headings to the new worksheet
-        worksheet.append_row(['Correct Answer', 'Last Guessed Answer'])
+        worksheet.append_row(['Correct Word', 'Last Guessed Word'])
     return worksheet
 
 
-def save_data(worksheet, correct_answer, last_answer):
+def save_data(worksheet, correct_word, last_guessword):
     """
-    Save data to the worksheet
+    Save data in the worksheet
     """
-    worksheet.append_row([correct_answer, last_answer])
+    worksheet.append_row([correct_word, last_guessword])
 
 
 def random_word():
@@ -111,12 +113,12 @@ def secret_words(word):
     last_guess = ''
 
     while attempt > 0:
-        print(f"{attempt} attempts remaining\n")
+        print(f"{attempt} attempts are remaining\n")
         user_input = input("Enter the guessed word: ")
         last_guess = user_input
 
         if user_input == word:
-            print("Correct!")
+            print("Correct! \n")
             break
         else:
             print("Try again, this is not a correct word")
@@ -142,13 +144,13 @@ def main():
     print("Welcome to the Word Guess game! \n")
     print("This is the simple word guessing game.")
     print("All words are belong from Programming words. \n")
-    username = input("Enter your Player Name: \n")
+    username = input("Enter the Player Name: \n")
     for iteration in range(1, 6):
         word_to_guess = random_word()
         last_guess, guessed_word = secret_words(word_to_guess)
         worksheet = get_user_worksheet(username)
         save_data(worksheet, word_to_guess, last_guess)
-        print("Next Word\n")
+        print("Next Guessing Word \n")
     print("Finish")
 
 
