@@ -117,6 +117,8 @@ I used Heroku to deploy the project.
 
 1. The website is compatible with all devices.
 
+![Responsive](readme-doc/responsive.JPG)
+
 ## Deployment ##
 
 **Github**
