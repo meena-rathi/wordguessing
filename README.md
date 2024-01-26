@@ -12,11 +12,17 @@ I as a user, to see the infromation about game in the main page.
 **Home**
 1. Using Google sheet, Sheet will be created with the name of Player name.
 2. A list contains of words.
-3. Each a word has a 5 attempts.
+3. Each word has a 5 attempts.
 4. After 2 attemps hint will be reveal.
 5. Validation handle in all cases.
 6. Acutual word and player last guessed word for all words will be saved in google sheet.
 7. For every player new sheet will be created.
+
+
+![Start](readme-doc/Plyername.JPG)
+![guessword](readme-doc/guessword1.JPG)
+![guessword](readme-doc/guessword2.JPG)
+![Save data in Sheet](readme-doc/googlesheet.JPG)
 
 ## Technologies ##
 
