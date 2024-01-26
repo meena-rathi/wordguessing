@@ -14,12 +14,12 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('wordguess')
 
 def get_user_worksheet(username):
-      """
+    """
     Create sheet with the player name.
     add the row correct word and Last guess word
     Check if the sheet already exit or not and convert the upper to lower case
     if not create a new sheet
-     """
+    """
     username_lower = username.lower()  
 
     worksheets = SHEET.worksheets()
