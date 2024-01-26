@@ -121,7 +121,7 @@ def secret_words(word):
             print("Correct! \n")
             break
         else:
-            print("Try again, this is not a correct word")
+            print("Try again, this is not a correct word \n")
             attempt -= 1
         hint_counter += 1
         if attempt == hint_word:
@@ -131,7 +131,7 @@ def secret_words(word):
             continue
 
     if attempt == 0:
-        print("Sorry, you're out of attempts. The correct word was:", word)
+        print("Sorry, you're out of attempts. The correct word was:", word, "\n")
     return last_guess, guessed_word
 
 def main():
@@ -141,10 +141,13 @@ def main():
     in a worksheet associated with the player's username.
     After five rounds, prints "Finish" to signify the end of the game.
     """
+    print("-"* 25)
     print("Welcome to the Word Guess game! \n")
     print("This is the simple word guessing game.")
     print("All words are belong from Programming words. \n")
+    print("-"* 25)
     username = input("Enter the Player Name: \n")
+    print("-"* 25)
     for iteration in range(1, 6):
         word_to_guess = random_word()
         last_guess, guessed_word = secret_words(word_to_guess)
