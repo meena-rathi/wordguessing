@@ -13,19 +13,23 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('wordguess')
 
-
 def get_user_worksheet(username):
-    """
+      """
     Create sheet with the player name.
     add the row correct word and Last guess word
-    """
-    try:
-        worksheet = SHEET.worksheet(username)
-    except gspread.exceptions.WorksheetNotFound:
+    Check if the sheet already exit or not and convert the upper to lower case
+    if not create a new sheet
+     """
+    username_lower = username.lower()  
+
+    worksheets = SHEET.worksheets()
+    existing_worksheet = next((ws for ws in worksheets if ws.title.lower() == username_lower), None)
+    if existing_worksheet:
+        return existing_worksheet
+    else:
         worksheet = SHEET.add_worksheet(title=username, rows="100", cols="20")
         worksheet.append_row(['Correct Word', 'Last Guessed Word'])
-    return worksheet
-
+        return worksheet
 
 def save_data(worksheet, correct_word, last_guessword):
     """
