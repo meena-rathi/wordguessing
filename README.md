@@ -148,3 +148,5 @@ I used Heroku to deploy the project.
 ## Credits ##
 1. Love sandwitches
 2. w3 school
+3. https://stackoverflow.com/
+4. https://realpython.com/python-main-function/
