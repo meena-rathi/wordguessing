@@ -13,6 +13,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('wordguess')
 
+
 def get_user_worksheet(username):
     """
     Create sheet with the player name.
@@ -20,16 +21,19 @@ def get_user_worksheet(username):
     Check if the sheet already exit or not and convert the upper to lower case
     if not create a new sheet
     """
-    username_lower = username.lower()  
-
+    username_lower = username.lower()
     worksheets = SHEET.worksheets()
-    existing_worksheet = next((ws for ws in worksheets if ws.title.lower() == username_lower), None)
+    existing_worksheet = next(
+        (ws for ws in worksheets if ws.title.lower() == username_lower),
+        None
+    )
     if existing_worksheet:
         return existing_worksheet
     else:
         worksheet = SHEET.add_worksheet(title=username, rows="100", cols="20")
         worksheet.append_row(['Correct Word', 'Last Guessed Word'])
         return worksheet
+
 
 def save_data(worksheet, correct_word, last_guessword):
     """
@@ -135,23 +139,26 @@ def secret_words(word):
             continue
 
     if attempt == 0:
-        print("Sorry, you're out of attempts. The correct word was:", word, "\n")
+        print("Sorry, you're out of attempts.The correct word was:", word)
+        print("\n")
     return last_guess, guessed_word
 
+
 def main():
+
     """
-    Saves the player's data, including the word to guess, the last guess, 
+    Saves the player's data, including the word to guess, the last guess,
     and the guessed word,
     in a worksheet associated with the player's username.
     After five rounds, prints "Finish" to signify the end of the game.
     """
-    print("-"* 25)
+    print("-" * 25)
     print("Welcome to the Word Guess game! \n")
     print("This is the simple word guessing game.")
     print("All words are belong from Programming words. \n")
-    print("-"* 25)
+    print("-" * 25)
     username = input("Enter the Player Name: \n")
-    print("-"* 25)
+    print("-" * 25)
     for iteration in range(1, 6):
         word_to_guess = random_word()
         last_guess, guessed_word = secret_words(word_to_guess)
